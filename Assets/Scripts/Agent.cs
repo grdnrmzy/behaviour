@@ -47,5 +47,15 @@ public class Agent : MonoBehaviour
             velocity.Normalize();
             velocity = velocity * maxSpeed;
         }
-    }
+        if (steering.angular == 0.0f)
+        {
+            rotation = 0.0f;
+        }
+        if(steering.linear.sqrMagnitude == 0.0f)
+        {
+            velocity = Vector3.zero;
+        }
+        steering = new Steering();
+    } // delegate the movenet's logic inside the GetSteering() function on the behaviours that we will
+    // later build, simplifying our agent's class to a main calculation based on those. 
 }
