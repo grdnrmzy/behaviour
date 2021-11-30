@@ -9,7 +9,7 @@ public class AgentBehaviour : MonoBehaviour
 
     protected Agent agent;
 
-    public void Awake()
+    public virtual void Awake()
     {
         agent = gameObject.GetComponent<Agent>();
     }
